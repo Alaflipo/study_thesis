@@ -1,0 +1,65 @@
+{
+  "$schema": "https://raw.githubusercontent.com/revisit-studies/study/main/src/parser/StudyConfigSchema.json",
+  "studyMetadata": {
+    "title": "Mooey study",
+    "version": "pilot-1",
+    "authors": ["Morris Boers"],
+    "date": "2026-02-11",
+    "description": "Participants view an image and answer open-ended questions about it.",
+    "organizations": ["Your Lab / Org"]
+  },
+  "uiConfig": {
+    "contactEmail": "m.boers1@student.tue.nl",
+    "logoPath": "revisitAssets/revisitLogoSquare.svg",
+    "withProgressBar": true,
+    "withSidebar": true,
+    "studyEndMsg": "Thank you for participating, your responses have been recorded."
+  },
+  "components": {
+    "photo-reflection": {
+      "type": "image",
+      "path": "image-reflection-study/assets/picture.jpg",
+      "instruction": "Look at the image carefully, then answer the questions below.",
+      "instructionLocation": "aboveStimulus",
+      "style": { "maxWidth": "900px", "width": "100%" },
+      "response": [
+        {
+          "id": "first-impression",
+          "type": "longText",
+          "prompt": "What’s your first impression of this image?",
+          "location": "belowStimulus",
+          "placeholder": "Write a few sentences…",
+          "required": true
+        },
+        {
+          "id": "details-noticed",
+          "type": "longText",
+          "prompt": "What details stand out to you, and why?",
+          "location": "belowStimulus",
+          "placeholder": "Describe specific elements you notice…",
+          "required": true
+        },
+        {
+          "id": "story",
+          "type": "longText",
+          "prompt": "What story do you think is happening here?",
+          "location": "belowStimulus",
+          "placeholder": "Interpret the scene in your own words…",
+          "required": false
+        },
+        {
+          "id": "questions",
+          "type": "longText",
+          "prompt": "What questions does this image raise for you?",
+          "location": "belowStimulus",
+          "placeholder": "List any questions or uncertainties…",
+          "required": false
+        }
+      ]
+    }
+  },
+  "sequence": {
+    "order": "fixed",
+    "components": ["photo-reflection"]
+  }
+}
