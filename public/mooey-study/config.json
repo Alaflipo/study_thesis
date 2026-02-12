@@ -6,7 +6,7 @@
     "authors": ["Morris Boers"],
     "date": "2026-02-11",
     "description": "Participants view an image and answer open-ended questions about it.",
-    "organizations": ["Your Lab / Org"]
+    "organizations": ["TU Eindhoven"]
   },
   "uiConfig": {
     "contactEmail": "m.boers1@student.tue.nl",
@@ -16,50 +16,447 @@
     "studyEndMsg": "Thank you for participating, your responses have been recorded."
   },
   "components": {
-    "photo-reflection": {
-      "type": "image",
-      "path": "image-reflection-study/assets/picture.jpg",
-      "instruction": "Look at the image carefully, then answer the questions below.",
-      "instructionLocation": "aboveStimulus",
-      "style": { "maxWidth": "900px", "width": "100%" },
-      "response": [
-        {
-          "id": "first-impression",
-          "type": "longText",
-          "prompt": "What’s your first impression of this image?",
-          "location": "belowStimulus",
-          "placeholder": "Write a few sentences…",
-          "required": true
-        },
-        {
-          "id": "details-noticed",
-          "type": "longText",
-          "prompt": "What details stand out to you, and why?",
-          "location": "belowStimulus",
-          "placeholder": "Describe specific elements you notice…",
-          "required": true
-        },
-        {
-          "id": "story",
-          "type": "longText",
-          "prompt": "What story do you think is happening here?",
-          "location": "belowStimulus",
-          "placeholder": "Interpret the scene in your own words…",
-          "required": false
-        },
-        {
-          "id": "questions",
-          "type": "longText",
-          "prompt": "What questions does this image raise for you?",
-          "location": "belowStimulus",
-          "placeholder": "List any questions or uncertainties…",
-          "required": false
-        }
-      ]
+    "ex1": {
+        "type": "image",
+        "path": "mooey-study/assets/ex1/ex1.png",
+        "instruction": "Look at the image carefully, then answer the questions below.",
+        "instructionLocation": "sidebar",
+        "style": { "maxWidth": "900px", "width": "100%" },
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "difference",
+            "type": "longText",
+            "prompt": "Describe the difference between the second image compared to the first image.",
+            "location": "sidebar",
+            "placeholder": "Describe the difference...",
+            "required": true
+            },
+            {
+                "id": "transform_1",
+                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "First step...",
+                "required": true
+            },
+            {
+                "id": "transform_2",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Second step...",
+                "required": false
+            },
+            {
+                "id": "transform_3",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Third step...",
+                "required": false
+            }
+        ]
+    },
+    
+
+    "ex2": {
+        "type": "image",
+        "path": "mooey-study/assets/ex2/ex2.png",
+        "instruction": "Look at the image carefully, then answer the questions below.",
+        "instructionLocation": "sidebar",
+        "style": { "maxWidth": "900px", "width": "100%" },
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "difference",
+            "type": "longText",
+            "prompt": "Describe the difference between the second image compared to the first image.",
+            "location": "sidebar",
+            "placeholder": "Describe the difference...",
+            "required": true
+            },
+            {
+                "id": "transform_1",
+                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "First step...",
+                "required": true
+            },
+            {
+                "id": "transform_2",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Second step...",
+                "required": false
+            },
+            {
+                "id": "transform_3",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Third step...",
+                "required": false
+            }
+        ]
+    },
+    
+
+    "ex3": {
+        "type": "image",
+        "path": "mooey-study/assets/ex3/ex3.png",
+        "instruction": "Look at the image carefully, then answer the questions below.",
+        "instructionLocation": "sidebar",
+        "style": { "maxWidth": "900px", "width": "100%" },
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "difference",
+            "type": "longText",
+            "prompt": "Describe the difference between the second image compared to the first image.",
+            "location": "sidebar",
+            "placeholder": "Describe the difference...",
+            "required": true
+            },
+            {
+                "id": "transform_1",
+                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "First step...",
+                "required": true
+            },
+            {
+                "id": "transform_2",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Second step...",
+                "required": false
+            },
+            {
+                "id": "transform_3",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Third step...",
+                "required": false
+            }
+        ]
+    },
+    
+
+    "ex4": {
+        "type": "image",
+        "path": "mooey-study/assets/ex4/ex4.png",
+        "instruction": "Look at the image carefully, then answer the questions below.",
+        "instructionLocation": "sidebar",
+        "style": { "maxWidth": "900px", "width": "100%" },
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "difference",
+            "type": "longText",
+            "prompt": "Describe the difference between the second image compared to the first image.",
+            "location": "sidebar",
+            "placeholder": "Describe the difference...",
+            "required": true
+            },
+            {
+                "id": "transform_1",
+                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "First step...",
+                "required": true
+            },
+            {
+                "id": "transform_2",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Second step...",
+                "required": false
+            },
+            {
+                "id": "transform_3",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Third step...",
+                "required": false
+            }
+        ]
+    },
+    
+
+    "ex5": {
+        "type": "image",
+        "path": "mooey-study/assets/ex5/ex5.png",
+        "instruction": "Look at the image carefully, then answer the questions below.",
+        "instructionLocation": "sidebar",
+        "style": { "maxWidth": "900px", "width": "100%" },
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "difference",
+            "type": "longText",
+            "prompt": "Describe the difference between the second image compared to the first image.",
+            "location": "sidebar",
+            "placeholder": "Describe the difference...",
+            "required": true
+            },
+            {
+                "id": "transform_1",
+                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "First step...",
+                "required": true
+            },
+            {
+                "id": "transform_2",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Second step...",
+                "required": false
+            },
+            {
+                "id": "transform_3",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Third step...",
+                "required": false
+            }
+        ]
+    },
+    
+
+    "ex6": {
+        "type": "image",
+        "path": "mooey-study/assets/ex6/ex6.png",
+        "instruction": "Look at the image carefully, then answer the questions below.",
+        "instructionLocation": "sidebar",
+        "style": { "maxWidth": "900px", "width": "100%" },
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "difference",
+            "type": "longText",
+            "prompt": "Describe the difference between the second image compared to the first image.",
+            "location": "sidebar",
+            "placeholder": "Describe the difference...",
+            "required": true
+            },
+            {
+                "id": "transform_1",
+                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "First step...",
+                "required": true
+            },
+            {
+                "id": "transform_2",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Second step...",
+                "required": false
+            },
+            {
+                "id": "transform_3",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Third step...",
+                "required": false
+            }
+        ]
+    },
+    
+
+    "ex7": {
+        "type": "image",
+        "path": "mooey-study/assets/ex7/ex7.png",
+        "instruction": "Look at the image carefully, then answer the questions below.",
+        "instructionLocation": "sidebar",
+        "style": { "maxWidth": "900px", "width": "100%" },
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "difference",
+            "type": "longText",
+            "prompt": "Describe the difference between the second image compared to the first image.",
+            "location": "sidebar",
+            "placeholder": "Describe the difference...",
+            "required": true
+            },
+            {
+                "id": "transform_1",
+                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "First step...",
+                "required": true
+            },
+            {
+                "id": "transform_2",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Second step...",
+                "required": false
+            },
+            {
+                "id": "transform_3",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Third step...",
+                "required": false
+            }
+        ]
+    },
+    
+
+    "ex8": {
+        "type": "image",
+        "path": "mooey-study/assets/ex8/ex8_1.png",
+        "instruction": "Look at the image carefully, then answer the questions below.",
+        "instructionLocation": "sidebar",
+        "style": { "maxWidth": "900px", "width": "100%" },
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "difference",
+            "type": "longText",
+            "prompt": "Describe the difference between the second image compared to the first image.",
+            "location": "sidebar",
+            "placeholder": "Describe the difference...",
+            "required": true
+            },
+            {
+                "id": "transform_1",
+                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "First step...",
+                "required": true
+            },
+            {
+                "id": "transform_2",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Second step...",
+                "required": false
+            },
+            {
+                "id": "transform_3",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Third step...",
+                "required": false
+            }
+        ]
+    },
+    
+
+    "ex9": {
+        "type": "image",
+        "path": "mooey-study/assets/ex9/ex9.png",
+        "instruction": "Look at the image carefully, then answer the questions below.",
+        "instructionLocation": "sidebar",
+        "style": { "maxWidth": "900px", "width": "100%" },
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "difference",
+            "type": "longText",
+            "prompt": "Describe the difference between the second image compared to the first image.",
+            "location": "sidebar",
+            "placeholder": "Describe the difference...",
+            "required": true
+            },
+            {
+                "id": "transform_1",
+                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "First step...",
+                "required": true
+            },
+            {
+                "id": "transform_2",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Second step...",
+                "required": false
+            },
+            {
+                "id": "transform_3",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Third step...",
+                "required": false
+            }
+        ]
+    },
+    
+
+    "ex10": {
+        "type": "image",
+        "path": "mooey-study/assets/ex10/ex10_1.png",
+        "instruction": "Look at the image carefully, then answer the questions below.",
+        "instructionLocation": "sidebar",
+        "style": { "maxWidth": "900px", "width": "100%" },
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "difference",
+            "type": "longText",
+            "prompt": "Describe the difference between the second image compared to the first image.",
+            "location": "sidebar",
+            "placeholder": "Describe the difference...",
+            "required": true
+            },
+            {
+                "id": "transform_1",
+                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "First step...",
+                "required": true
+            },
+            {
+                "id": "transform_2",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Second step...",
+                "required": false
+            },
+            {
+                "id": "transform_3",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Third step...",
+                "required": false
+            }
+        ]
     }
   },
   "sequence": {
-    "order": "fixed",
-    "components": ["photo-reflection"]
+    "order": "random",
+    "components": ["ex1", "ex2", "ex3", "ex4", "ex5", "ex6", "ex7", "ex8", "ex9", "ex10"]
   }
 }
