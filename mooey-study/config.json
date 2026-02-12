@@ -498,6 +498,49 @@
         ]
     },
 
+    "ex12": {
+        "type": "image",
+        "path": "mooey-study/assets/ex12/ex12.png",
+        "instruction": "Look at the image carefully, then answer the questions below.",
+        "instructionLocation": "sidebar",
+        "style": { "maxWidth": "900px", "width": "100%" },
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "difference",
+            "type": "longText",
+            "prompt": "Describe the difference between the second image compared to the first image.",
+            "location": "sidebar",
+            "placeholder": "Describe the difference...",
+            "required": true
+            },
+            {
+                "id": "transform_1",
+                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "First step...",
+                "required": true
+            },
+            {
+                "id": "transform_2",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Second step...",
+                "required": false
+            },
+            {
+                "id": "transform_3",
+                "prompt": "",
+                "type": "shortText", 
+                "location": "sidebar", 
+                "placeholder": "Third step...",
+                "required": false
+            }
+        ]
+    },
+
     "choice1": {
         "type": "image",
         "path": "mooey-study/assets/ex8/choice.png",
@@ -563,7 +606,7 @@
         {
         "id": "Describe",
         "order": "random",
-        "components": ["ex1", "ex2", "ex3", "ex4", "ex5", "ex6", "ex7", "ex8", "ex9", "ex10", "ex11"]
+        "components": ["ex1", "ex2", "ex3", "ex4", "ex5", "ex6", "ex7", "ex8", "ex9", "ex10", "ex11", "ex12"]
         },
         {
         "id": "Choose",
