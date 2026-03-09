@@ -15,8 +15,8 @@
     "withSidebar": true,
     "studyEndMsg": "Thank you for participating, your responses have been recorded."
   },
-  "components": {
-    "ex1": {
+  "baseComponents": {
+    "compare": {
         "type": "image",
         "path": "mooey-study/assets/ex1/ex1.png",
         "instruction": "Look at the image carefully, then answer the questions below.",
@@ -35,7 +35,7 @@
             {
                 "id": "transform_1",
                 "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
-                "type": "shortText", 
+                "type": "longText", 
                 "location": "sidebar", 
                 "placeholder": "First step...",
                 "required": true
@@ -43,7 +43,7 @@
             {
                 "id": "transform_2",
                 "prompt": "",
-                "type": "shortText", 
+                "type": "longText", 
                 "location": "sidebar", 
                 "placeholder": "Second step...",
                 "required": false
@@ -51,500 +51,243 @@
             {
                 "id": "transform_3",
                 "prompt": "",
-                "type": "shortText", 
+                "type": "longText", 
                 "location": "sidebar", 
                 "placeholder": "Third step...",
                 "required": false
             }
         ]
     },
-    
+    "compare_2": {
+        "type": "website", 
+        "path": "mooey-study/assets/besides.html",
+        "instruction": "Look at the image carefully, then answer the questions below.", 
+        "instructionLocation": "sidebar",
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "difference",
+            "type": "longText",
+            "prompt": "Describe the difference between the second image compared to the first image.",
+            "location": "sidebar",
+            "placeholder": "Describe the difference...",
+            "required": true
+            },
+            {
+                "id": "transform_1",
+                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
+                "type": "longText", 
+                "location": "sidebar", 
+                "placeholder": "First step...",
+                "required": true
+            },
+            {
+                "id": "transform_2",
+                "prompt": "",
+                "type": "longText", 
+                "location": "sidebar", 
+                "placeholder": "Second step...",
+                "required": false
+            },
+            {
+                "id": "transform_3",
+                "prompt": "",
+                "type": "longText", 
+                "location": "sidebar", 
+                "placeholder": "Third step...",
+                "required": false
+            }
+        ]
+    }, 
+    "picture_choice_hor": {
+        "type": "website", 
+        "path": "mooey-study/assets/horizontal.html",
+        "instruction": "Choose the picture you prefer", 
+        "instructionLocation": "sidebar",
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "chosen_image",
+            "type": "radio",
+            "prompt": "Select one:",
+            "location": "sidebar", 
+            "options": [
+                {
+                "label": "Image A",
+                "value": "a"
+                },
+                {
+                "label": "Image B",
+                "value": "b"
+                }
+            ]
+            }
+        ]
+    }, 
+    "picture_choice_ver": {
+        "type": "website", 
+        "path": "mooey-study/assets/vertical.html",
+        "instruction": "Choose the picture you prefer", 
+        "instructionLocation": "sidebar",
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "chosen_image",
+            "type": "radio",
+            "prompt": "Select one:",
+            "location": "sidebar", 
+            "options": [
+                {
+                "label": "Image A",
+                "value": "a"
+                },
+                {
+                "label": "Image B",
+                "value": "b"
+                }
+            ]
+            }
+        ]
+    }, 
+    "picture_choice_ver_3": {
+        "type": "website", 
+        "path": "mooey-study/assets/vertical.html",
+        "instruction": "Choose the picture you prefer", 
+        "instructionLocation": "sidebar",
+        "nextButtonLocation": "sidebar",
+        "response": [
+            {
+            "id": "chosen_image",
+            "type": "radio",
+            "prompt": "Select one:",
+            "location": "sidebar", 
+            "options": [
+                {
+                "label": "Image A",
+                "value": "a"
+                },
+                {
+                "label": "Image B",
+                "value": "b"
+                }, 
+                {
+                "label": "Image C",
+                "value": "c"
+                }
+            ]
+            }
+        ]
+    }
+  },
+  "components": {
+    "ex1": {
+        "baseComponent": "compare",
+        "path": "mooey-study/assets/ex1/ex1.png"
+    }, 
 
     "ex2": {
-        "type": "image",
-        "path": "mooey-study/assets/ex2/ex2.png",
-        "instruction": "Look at the image carefully, then answer the questions below.",
-        "instructionLocation": "sidebar",
-        "style": { "maxWidth": "900px", "width": "100%" },
-        "nextButtonLocation": "sidebar",
-        "response": [
-            {
-            "id": "difference",
-            "type": "longText",
-            "prompt": "Describe the difference between the second image compared to the first image.",
-            "location": "sidebar",
-            "placeholder": "Describe the difference...",
-            "required": true
-            },
-            {
-                "id": "transform_1",
-                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "First step...",
-                "required": true
-            },
-            {
-                "id": "transform_2",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Second step...",
-                "required": false
-            },
-            {
-                "id": "transform_3",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Third step...",
-                "required": false
-            }
-        ]
+        "baseComponent": "compare",
+        "path": "mooey-study/assets/ex2/ex2.png"
     },
-    
 
     "ex3": {
-        "type": "image",
-        "path": "mooey-study/assets/ex3/ex3.png",
-        "instruction": "Look at the image carefully, then answer the questions below.",
-        "instructionLocation": "sidebar",
-        "style": { "maxWidth": "900px", "width": "100%" },
-        "nextButtonLocation": "sidebar",
-        "response": [
-            {
-            "id": "difference",
-            "type": "longText",
-            "prompt": "Describe the difference between the second image compared to the first image.",
-            "location": "sidebar",
-            "placeholder": "Describe the difference...",
-            "required": true
-            },
-            {
-                "id": "transform_1",
-                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "First step...",
-                "required": true
-            },
-            {
-                "id": "transform_2",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Second step...",
-                "required": false
-            },
-            {
-                "id": "transform_3",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Third step...",
-                "required": false
-            }
-        ]
+        "baseComponent": "compare",
+        "path": "mooey-study/assets/ex3/ex3.png"
     },
-    
 
     "ex4": {
-        "type": "image",
-        "path": "mooey-study/assets/ex4/ex4.png",
-        "instruction": "Look at the image carefully, then answer the questions below.",
-        "instructionLocation": "sidebar",
-        "style": { "maxWidth": "900px", "width": "100%" },
-        "nextButtonLocation": "sidebar",
-        "response": [
-            {
-            "id": "difference",
-            "type": "longText",
-            "prompt": "Describe the difference between the second image compared to the first image.",
-            "location": "sidebar",
-            "placeholder": "Describe the difference...",
-            "required": true
-            },
-            {
-                "id": "transform_1",
-                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "First step...",
-                "required": true
-            },
-            {
-                "id": "transform_2",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Second step...",
-                "required": false
-            },
-            {
-                "id": "transform_3",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Third step...",
-                "required": false
-            }
-        ]
+        "baseComponent": "compare",
+        "path": "mooey-study/assets/ex4/ex4.png"
     },
-    
 
     "ex5": {
-        "type": "image",
-        "path": "mooey-study/assets/ex5/ex5.png",
-        "instruction": "Look at the image carefully, then answer the questions below.",
-        "instructionLocation": "sidebar",
-        "style": { "maxWidth": "900px", "width": "100%" },
-        "nextButtonLocation": "sidebar",
-        "response": [
-            {
-            "id": "difference",
-            "type": "longText",
-            "prompt": "Describe the difference between the second image compared to the first image.",
-            "location": "sidebar",
-            "placeholder": "Describe the difference...",
-            "required": true
-            },
-            {
-                "id": "transform_1",
-                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "First step...",
-                "required": true
-            },
-            {
-                "id": "transform_2",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Second step...",
-                "required": false
-            },
-            {
-                "id": "transform_3",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Third step...",
-                "required": false
-            }
-        ]
+        "baseComponent": "compare",
+        "path": "mooey-study/assets/ex5/ex5.png"
     },
-    
 
     "ex6": {
-        "type": "image",
-        "path": "mooey-study/assets/ex6/ex6.png",
-        "instruction": "Look at the image carefully, then answer the questions below.",
-        "instructionLocation": "sidebar",
-        "style": { "maxWidth": "900px", "width": "100%" },
-        "nextButtonLocation": "sidebar",
-        "response": [
-            {
-            "id": "difference",
-            "type": "longText",
-            "prompt": "Describe the difference between the second image compared to the first image.",
-            "location": "sidebar",
-            "placeholder": "Describe the difference...",
-            "required": true
-            },
-            {
-                "id": "transform_1",
-                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "First step...",
-                "required": true
-            },
-            {
-                "id": "transform_2",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Second step...",
-                "required": false
-            },
-            {
-                "id": "transform_3",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Third step...",
-                "required": false
-            }
-        ]
+        "baseComponent": "compare",
+        "path": "mooey-study/assets/ex6/ex6.png"
     },
-    
 
     "ex7": {
-        "type": "image",
-        "path": "mooey-study/assets/ex7/ex7.png",
-        "instruction": "Look at the image carefully, then answer the questions below.",
-        "instructionLocation": "sidebar",
-        "style": { "maxWidth": "900px", "width": "100%" },
-        "nextButtonLocation": "sidebar",
-        "response": [
-            {
-            "id": "difference",
-            "type": "longText",
-            "prompt": "Describe the difference between the second image compared to the first image.",
-            "location": "sidebar",
-            "placeholder": "Describe the difference...",
-            "required": true
-            },
-            {
-                "id": "transform_1",
-                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "First step...",
-                "required": true
-            },
-            {
-                "id": "transform_2",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Second step...",
-                "required": false
-            },
-            {
-                "id": "transform_3",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Third step...",
-                "required": false
-            }
-        ]
+        "baseComponent": "compare",
+        "path": "mooey-study/assets/ex7/ex7.png"
     },
-    
 
     "ex8": {
-        "type": "image",
-        "path": "mooey-study/assets/ex8/ex8_1.png",
-        "instruction": "Look at the image carefully, then answer the questions below.",
-        "instructionLocation": "sidebar",
-        "style": { "maxWidth": "900px", "width": "100%" },
-        "nextButtonLocation": "sidebar",
-        "response": [
-            {
-            "id": "difference",
-            "type": "longText",
-            "prompt": "Describe the difference between the second image compared to the first image.",
-            "location": "sidebar",
-            "placeholder": "Describe the difference...",
-            "required": true
-            },
-            {
-                "id": "transform_1",
-                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "First step...",
-                "required": true
-            },
-            {
-                "id": "transform_2",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Second step...",
-                "required": false
-            },
-            {
-                "id": "transform_3",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Third step...",
-                "required": false
-            }
-        ]
+        "baseComponent": "compare",
+        "path": "mooey-study/assets/ex8/ex8_1.png"
     },
     
-
     "ex9": {
-        "type": "image",
-        "path": "mooey-study/assets/ex9/ex9.png",
-        "instruction": "Look at the image carefully, then answer the questions below.",
-        "instructionLocation": "sidebar",
-        "style": { "maxWidth": "900px", "width": "100%" },
-        "nextButtonLocation": "sidebar",
-        "response": [
-            {
-            "id": "difference",
-            "type": "longText",
-            "prompt": "Describe the difference between the second image compared to the first image.",
-            "location": "sidebar",
-            "placeholder": "Describe the difference...",
-            "required": true
-            },
-            {
-                "id": "transform_1",
-                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "First step...",
-                "required": true
-            },
-            {
-                "id": "transform_2",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Second step...",
-                "required": false
-            },
-            {
-                "id": "transform_3",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Third step...",
-                "required": false
-            }
-        ]
+        "baseComponent": "compare",
+        "path": "mooey-study/assets/ex9/ex9.png"
     },
-    
 
     "ex10": {
-        "type": "image",
-        "path": "mooey-study/assets/ex10/ex10_1.png",
-        "instruction": "Look at the image carefully, then answer the questions below.",
-        "instructionLocation": "sidebar",
-        "style": { "maxWidth": "900px", "width": "100%" },
-        "nextButtonLocation": "sidebar",
-        "response": [
-            {
-            "id": "difference",
-            "type": "longText",
-            "prompt": "Describe the difference between the second image compared to the first image.",
-            "location": "sidebar",
-            "placeholder": "Describe the difference...",
-            "required": true
-            },
-            {
-                "id": "transform_1",
-                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "First step...",
-                "required": true
-            },
-            {
-                "id": "transform_2",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Second step...",
-                "required": false
-            },
-            {
-                "id": "transform_3",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Third step...",
-                "required": false
-            }
-        ]
+        "baseComponent": "compare",
+        "path": "mooey-study/assets/ex10/ex10_1.png"
     },
 
     "ex11": {
-        "type": "image",
-        "path": "mooey-study/assets/ex11/ex11.png",
-        "instruction": "Look at the image carefully, then answer the questions below.",
-        "instructionLocation": "sidebar",
-        "style": { "maxWidth": "900px", "width": "100%" },
-        "nextButtonLocation": "sidebar",
-        "response": [
-            {
-            "id": "difference",
-            "type": "longText",
-            "prompt": "Describe the difference between the second image compared to the first image.",
-            "location": "sidebar",
-            "placeholder": "Describe the difference...",
-            "required": true
-            },
-            {
-                "id": "transform_1",
-                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "First step...",
-                "required": true
-            },
-            {
-                "id": "transform_2",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Second step...",
-                "required": false
-            },
-            {
-                "id": "transform_3",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Third step...",
-                "required": false
-            }
-        ]
+        "baseComponent": "compare",
+        "path": "mooey-study/assets/ex11/ex11.png"
     },
 
     "ex12": {
-        "type": "image",
-        "path": "mooey-study/assets/ex12/ex12.png",
-        "instruction": "Look at the image carefully, then answer the questions below.",
-        "instructionLocation": "sidebar",
-        "style": { "maxWidth": "900px", "width": "100%" },
-        "nextButtonLocation": "sidebar",
-        "response": [
-            {
-            "id": "difference",
-            "type": "longText",
-            "prompt": "Describe the difference between the second image compared to the first image.",
-            "location": "sidebar",
-            "placeholder": "Describe the difference...",
-            "required": true
-            },
-            {
-                "id": "transform_1",
-                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "First step...",
-                "required": true
-            },
-            {
-                "id": "transform_2",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Second step...",
-                "required": false
-            },
-            {
-                "id": "transform_3",
-                "prompt": "",
-                "type": "shortText", 
-                "location": "sidebar", 
-                "placeholder": "Third step...",
-                "required": false
-            }
-        ]
+        "baseComponent": "compare",
+        "path": "mooey-study/assets/ex12/ex12.png"
+    },
+
+    "ex12b": {
+        "baseComponent": "compare_2",
+        "path": "mooey-study/assets/besides.html",
+        "parameters": {
+            "imagelinks": ["ex12/ex12_remade1.png", "ex12/ex12_remade2.png"] 
+        }
+    },
+
+    "ex13": {
+        "baseComponent": "compare_2",
+        "path": "mooey-study/assets/besides.html",
+        "parameters": {
+            "imagelinks": ["ex13/left.png", "ex13/right.png"] 
+        }
+    },
+    "ex14": {
+        "baseComponent": "compare_2",
+        "path": "mooey-study/assets/besides.html",
+        "parameters": {
+            "imagelinks": ["ex14/left.png", "ex14/right.png"] 
+        }
+    },
+    "ex15": {
+        "baseComponent": "compare_2",
+        "path": "mooey-study/assets/besides.html",
+        "parameters": {
+            "imagelinks": ["ex15/left.png", "ex15/right.png"] 
+        }
+    },
+    "ex16": {
+        "baseComponent": "compare_2",
+        "path": "mooey-study/assets/besides.html",
+        "parameters": {
+            "imagelinks": ["ex16/before.png", "ex16/after.png"] 
+        }
+    },
+    "ex16b": {
+        "baseComponent": "compare_2",
+        "path": "mooey-study/assets/besides.html",
+        "parameters": {
+            "imagelinks": ["ex16/before.png", "ex16/after_2.png"] 
+        }
     },
 
     "choice1": {
         "type": "image",
         "path": "mooey-study/assets/ex8/choice.png",
-        "instruction": "After performing the action 'Pivot around node X anti-clockwise' would you expect the machine to produce image A or B?",
+        "instruction": "After performing the action 'Pivot around node X anti-clockwise' what would be the more appropriate outcome, image A or B?",
         "instructionLocation": "sidebar",
         "style": { "maxWidth": "900px", "width": "80%" },
         "nextButtonLocation": "sidebar",
@@ -597,7 +340,234 @@
             ]
             }
         ]
+    },
+
+    "label1": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/outside_labeling/base1.png", "labeling/outside_labeling/with_outside1.png"] 
+        }
+    }, 
+    "label2": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/outside_labeling/base2.png", "labeling/outside_labeling/with_outside2.png"] 
+        }
+    }, 
+    "label3": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/outside_labeling/base3.png", "labeling/outside_labeling/with_outside3.png"] 
+        }
+    }, 
+    "label4": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/outside_labeling/base4.png", "labeling/outside_labeling/with_outside4.png"] 
+        }
+    },
+
+    "circle_1_1": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/outside_labeling/circles/circle_1.png", "labeling/outside_labeling/circles/circle_2.png"] 
+        }
+    },
+    "circle_1_2": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/outside_labeling/circles/circle_2.png", "labeling/outside_labeling/circles/circle_3.png"] 
+        }
+    },
+    "circle_1_3": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/outside_labeling/circles/circle_3.png", "labeling/outside_labeling/circles/circle_1.png"] 
+        }
+    },
+
+    "circle_2_1": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/outside_labeling/circles/small_1.png", "labeling/outside_labeling/circles/small_2.png"] 
+        }
+    },
+    "circle_2_2": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/outside_labeling/circles/small_2.png", "labeling/outside_labeling/circles/small_3.png"] 
+        }
+    },
+    "circle_2_3": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/outside_labeling/circles/small_3.png", "labeling/outside_labeling/circles/small_1.png"] 
+        }
+    },
+
+    "rotate1_1": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/rotated/ex1_rotate/hor.png", "labeling/rotated/ex1_rotate/rotate_min.png"] 
+        }
+    }, 
+    "rotate1_2": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/rotated/ex1_rotate/hor.png", "labeling/rotated/ex1_rotate/rotate_plus.png"] 
+        }
+    }, 
+    "rotate2_1": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/rotated/ex2_rotate/hor.png", "labeling/rotated/ex2_rotate/rotate_min.png"] 
+        }
+    }, 
+    "rotate2_2": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/rotated/ex2_rotate/rotate_plus.png", "labeling/rotated/ex2_rotate/hor.png"] 
+        }
+    }, 
+    "rotate3_1": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/rotated/ex3_rotate/hor.png", "labeling/rotated/ex3_rotate/rotate_min.png"] 
+        }
+    }, 
+    "rotate3_2": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/rotated/ex3_rotate/rotate_plus.png", "labeling/rotated/ex3_rotate/hor.png"] 
+        }
+    }, 
+    
+    "slider1_1_1": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/sliders/ex1_sliders/no_slider.png", "labeling/sliders/ex1_sliders/hor1.png"] 
+        }
+    }, 
+    "slider1_1_2": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/sliders/ex1_sliders/hor2.png", "labeling/sliders/ex1_sliders/no_slider.png"] 
+        }
+    }, 
+    "slider1_1_3": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/sliders/ex1_sliders/hor2.png", "labeling/sliders/ex1_sliders/hor1.png"] 
+        }
+    }, 
+
+    "slider1_2_1": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/sliders/ex1_sliders/no_slider.png", "labeling/sliders/ex1_sliders/sameside1.png"] 
+        }
+    }, 
+    "slider1_2_2": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/sliders/ex1_sliders/no_slider.png", "labeling/sliders/ex1_sliders/sameside_hor.png"] 
+        }
+    }, 
+    "slider1_2_3": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/sliders/ex1_sliders/sameside1.png", "labeling/sliders/ex1_sliders/sameside_hor.png"] 
+        }
+    }, 
+
+    "slider2_1_1": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/sliders/ex2_sliders/no_slider.png", "labeling/sliders/ex2_sliders/hor1.png"] 
+        }
+    }, 
+    "slider2_1_2": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/sliders/ex2_sliders/hor2.png", "labeling/sliders/ex2_sliders/no_slider.png"] 
+        }
+    }, 
+    "slider2_1_3": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/sliders/ex2_sliders/hor1.png", "labeling/sliders/ex2_sliders/hor2.png"] 
+        }
+    }, 
+
+    "slider2_2_1": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/sliders/ex2_sliders/no_slider.png", "labeling/sliders/ex2_sliders/sameside1.png"] 
+        }
+    }, 
+    "slider2_2_2": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/sliders/ex2_sliders/no_slider.png", "labeling/sliders/ex2_sliders/sameside_hor.png"] 
+        }
+    }, 
+    "slider2_2_3": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/sliders/ex2_sliders/sameside1.png", "labeling/sliders/ex2_sliders/sameside_hor.png"] 
+        }
+    }, 
+
+    "spring_1": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/spring/spring_label_2.png", "labeling/spring/spring_label_3.png"] 
+        }
+    }, 
+    "spring_2": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/spring/spring_label_2.png", "labeling/spring/spring_label_1.png"] 
+        }
+    },
+    "spring_3": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/spring/spring_label_1.png", "labeling/spring/spring_label_3.png"] 
+        }
     }
+
   },
   "sequence": {
     "id": "study",
@@ -606,7 +576,7 @@
         {
         "id": "Describe",
         "order": "random",
-        "components": ["ex1", "ex2", "ex3", "ex4", "ex5", "ex6", "ex7", "ex8", "ex9", "ex10", "ex11", "ex12"]
+        "components": ["ex1", "ex2", "ex3", "ex4", "ex5", "ex6", "ex7", "ex8", "ex9", "ex10", "ex11", "ex12", "ex12b", "ex13", "ex14", "ex15", "ex16", "ex16b"]
         },
         {
         "id": "Choose",
@@ -615,6 +585,16 @@
             "choice1",
             "choice2"
         ]
+        }, 
+        {
+        "id": "Label placement vibes",
+        "order": "random",
+        "components": ["label1", "label2", "label3", "label4", "slider1_1_1", "slider1_1_2", "slider1_1_3", "slider1_2_1", "slider1_2_2", "slider1_2_3", "slider2_1_1", "slider2_1_2", "slider2_1_3", "slider2_2_1", "slider2_2_2", "slider2_2_3", "spring_1", "spring_2", "spring_3", "circle_1_1", "circle_1_2", "circle_1_3", "circle_2_1", "circle_2_2", "circle_2_3"]
+        }, 
+        {
+        "id": "Label placement rotation",
+        "order": "random",
+        "components": ["rotate1_1", "rotate1_2", "rotate2_1", "rotate2_2", "rotate3_1", "rotate3_2"]
         }
     ]
   }

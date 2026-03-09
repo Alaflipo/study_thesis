@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Images</title>
+<script src="../../revisitUtilities/revisit-communicate.js"></script>
+
+<style>
+  body {
+    margin: 0;
+    padding: 4px;
+    font-family: system-ui, sans-serif;
+    background: #f6f7f9;
+  }
+
+  .wrap {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Vertical layout */
+  .image-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* minimal spacing */
+  }
+
+  .img-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-card img {
+    width: 100%;
+    display: block;
+  }
+
+  .label {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+  <div id="images" class="image-list"></div>
+</div>
+
+<script>
+const container = document.getElementById("images");
+
+function indexToLabel(i) {
+  let n = i + 1;
+  let s = "";
+  while (n > 0) {
+    const r = (n - 1) % 26;
+    s = String.fromCharCode(65 + r) + s;
+    n = Math.floor((n - 1) / 26);
+  }
+  return s;
+}
+
+function renderImages(links) {
+  container.innerHTML = "";
+
+  links.forEach((src, i) => {
+    const card = document.createElement("div");
+    card.className = "img-card";
+
+    const label = document.createElement("div");
+    label.className = "label";
+    label.textContent = indexToLabel(i);
+
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = "image " + indexToLabel(i);
+
+    card.appendChild(label);
+    card.appendChild(img);
+    container.appendChild(card);
+  });
+}
+
+Revisit.onDataReceive((data) => {
+  const imagelinks = data?.imagelinks;
+
+  if (!Array.isArray(imagelinks)) {
+    console.warn("imagelinks not found");
+    return;
+  }
+
+  renderImages(imagelinks);
+});
+</script>
+</body>
+</html>

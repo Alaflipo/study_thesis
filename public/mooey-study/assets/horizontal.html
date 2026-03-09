@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Images</title>
+  <script src="../../revisitUtilities/revisit-communicate.js"></script>
+  <style>
+    :root {
+      --gap: 0px;
+      --label-bg: rgba(0, 0, 0, 0.65);
+      --label-fg: #fff;
+    }
+
+    body {
+      margin: 0;
+      padding: 0px;
+      width: 100%;
+      height: 100%;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f6f7f9;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0;
+    }
+
+    /* Auto-fit means: as many columns as fit, each at least 260px */
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--gap);
+        width: 100vw;
+        padding: var(--gap);        /* optional: 1px edge padding */
+        box-sizing: border-box;
+    }
+
+    .img-card {
+        position: relative;
+        margin: 10px;                  /* figure has default margins—remove them */
+        border-radius: 0;           /* remove rounding */
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .img-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: var(--label-bg);
+      color: var(--label-fg);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1;
+      letter-spacing: 0.5px;
+      user-select: none;
+    }
+
+    /* optional: message banner */
+    .hint {
+      margin: 0 0 10px 0;
+      color: #333;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hint">Waiting for imagelinks…</div>
+    <div id="grid" class="grid"></div>
+  </div>
+
+  <script>
+    const gridEl = document.getElementById("grid");
+    const hintEl = document.querySelector(".hint");
+
+    // Turn 0 -> A, 1 -> B, ... 25 -> Z, 26 -> AA, etc.
+    function indexToLabel(i) {
+      let n = i + 1;
+      let s = "";
+      while (n > 0) {
+        const r = (n - 1) % 26;
+        s = String.fromCharCode(65 + r) + s;
+        n = Math.floor((n - 1) / 26);
+      }
+      return s;
+    }
+
+    function renderImages(links) {
+      gridEl.innerHTML = "";
+
+      links.forEach((src, i) => {
+        const figure = document.createElement("figure");
+        figure.className = "img-card";
+
+        const label = document.createElement("div");
+        label.className = "label";
+        label.textContent = indexToLabel(i);
+
+        const img = document.createElement("img");
+        img.loading = "lazy";
+        img.alt = `Image ${indexToLabel(i)}`;
+        img.src = src;
+
+        figure.appendChild(label);
+        figure.appendChild(img);
+        gridEl.appendChild(figure);
+      });
+
+      hintEl.textContent = ``;
+    }
+
+    // Optional fallback placeholders (so you don't see an empty page)
+    // Replace these with whatever makes sense for your project, or delete this block.
+    renderImages([
+      "ex10/after1.png",
+      "ex10/after1.png"
+    ]);
+
+    Revisit.onDataReceive((data) => {
+      console.log("Received data:", data);
+
+      const imagelinks = data?.imagelinks;
+
+      if (!Array.isArray(imagelinks) || imagelinks.length === 0) {
+        console.warn("Expected data.imagelinks to be a non-empty array.");
+        hintEl.textContent = "No imagelinks received.";
+        gridEl.innerHTML = "";
+        return;
+      }
+
+      renderImages(imagelinks);
+    });
+  </script>
+</body>
+</html>
