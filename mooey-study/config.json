@@ -180,6 +180,36 @@
     }
   },
   "components": {
+    "consent": {
+      "type": "markdown",
+      "path": "mooey-study/assets/consent.md",
+      "nextButtonText": "Agree",
+      "response": [
+        {
+          "id": "signature",
+          "prompt": "Your signature (either your name or initials)",
+          "location": "belowStimulus",
+          "type": "shortText",
+          "placeholder": "Please provide your signature"
+        },
+        {
+          "id": "accept",
+          "prompt": "Do you consent to the study and wish to continue?",
+          "requiredValue": "Accept",
+          "location": "belowStimulus",
+          "type": "radio",
+          "options": [
+            "Decline",
+            "Accept"
+          ]
+        }
+      ]
+    },
+    "introduction1": {
+      "type": "markdown",
+      "path": "mooey-study/assets/introduction1.md",
+      "response": []
+    },
     "ex1": {
         "baseComponent": "compare",
         "path": "mooey-study/assets/ex1/ex1.png"
@@ -284,6 +314,11 @@
         }
     },
 
+    "introduction2": {
+      "type": "markdown",
+      "path": "mooey-study/assets/introduction2.md",
+      "response": []
+    },
     "choice1": {
         "type": "image",
         "path": "mooey-study/assets/ex8/choice.png",
@@ -342,6 +377,12 @@
         ]
     },
 
+
+    "introduction3": {
+      "type": "markdown",
+      "path": "mooey-study/assets/introduction3.md",
+      "response": []
+    },
     "label1": {
         "baseComponent": "picture_choice_hor",
         "instruction": "Choose the picture your prefer", 
@@ -412,49 +453,6 @@
         "instruction": "Choose the picture your prefer", 
         "parameters": {
             "imagelinks": ["labeling/outside_labeling/circles/small_3.png", "labeling/outside_labeling/circles/small_1.png"] 
-        }
-    },
-
-    "rotate1_1": {
-        "baseComponent": "picture_choice_hor",
-        "instruction": "Choose the picture your prefer", 
-        "parameters": {
-            "imagelinks": ["labeling/rotated/ex1_rotate/hor.png", "labeling/rotated/ex1_rotate/rotate_min.png"] 
-        }
-    }, 
-    "rotate1_2": {
-        "baseComponent": "picture_choice_hor",
-        "instruction": "Choose the picture your prefer", 
-        "parameters": {
-            "imagelinks": ["labeling/rotated/ex1_rotate/hor.png", "labeling/rotated/ex1_rotate/rotate_plus.png"] 
-        }
-    }, 
-    "rotate2_1": {
-        "baseComponent": "picture_choice_hor",
-        "instruction": "Choose the picture your prefer", 
-        "parameters": {
-            "imagelinks": ["labeling/rotated/ex2_rotate/hor.png", "labeling/rotated/ex2_rotate/rotate_min.png"] 
-        }
-    }, 
-    "rotate2_2": {
-        "baseComponent": "picture_choice_hor",
-        "instruction": "Choose the picture your prefer", 
-        "parameters": {
-            "imagelinks": ["labeling/rotated/ex2_rotate/rotate_plus.png", "labeling/rotated/ex2_rotate/hor.png"] 
-        }
-    }, 
-    "rotate3_1": {
-        "baseComponent": "picture_choice_hor",
-        "instruction": "Choose the picture your prefer", 
-        "parameters": {
-            "imagelinks": ["labeling/rotated/ex3_rotate/hor.png", "labeling/rotated/ex3_rotate/rotate_min.png"] 
-        }
-    }, 
-    "rotate3_2": {
-        "baseComponent": "picture_choice_hor",
-        "instruction": "Choose the picture your prefer", 
-        "parameters": {
-            "imagelinks": ["labeling/rotated/ex3_rotate/rotate_plus.png", "labeling/rotated/ex3_rotate/hor.png"] 
         }
     }, 
     
@@ -566,7 +564,61 @@
         "parameters": {
             "imagelinks": ["labeling/spring/spring_label_1.png", "labeling/spring/spring_label_3.png"] 
         }
-    }
+    }, 
+
+    "introduction4": {
+      "type": "markdown",
+      "path": "mooey-study/assets/introduction4.md",
+      "response": []
+    }, 
+    "rotate1_1": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/rotated/ex1_rotate/hor.png", "labeling/rotated/ex1_rotate/rotate_min.png"] 
+        }
+    }, 
+    "rotate1_2": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/rotated/ex1_rotate/hor.png", "labeling/rotated/ex1_rotate/rotate_plus.png"] 
+        }
+    }, 
+    "rotate2_1": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/rotated/ex2_rotate/hor.png", "labeling/rotated/ex2_rotate/rotate_min.png"] 
+        }
+    }, 
+    "rotate2_2": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/rotated/ex2_rotate/rotate_plus.png", "labeling/rotated/ex2_rotate/hor.png"] 
+        }
+    }, 
+    "rotate3_1": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/rotated/ex3_rotate/hor.png", "labeling/rotated/ex3_rotate/rotate_min.png"] 
+        }
+    }, 
+    "rotate3_2": {
+        "baseComponent": "picture_choice_hor",
+        "instruction": "Choose the picture your prefer", 
+        "parameters": {
+            "imagelinks": ["labeling/rotated/ex3_rotate/rotate_plus.png", "labeling/rotated/ex3_rotate/hor.png"] 
+        }
+    }, 
+
+    "end": {
+      "type": "markdown",
+      "path": "mooey-study/assets/end.md",
+      "response": []
+    } 
 
   },
   "sequence": {
@@ -574,27 +626,49 @@
     "order": "fixed",
     "components": [
         {
+            "id": "introduction", 
+            "order": "fixed", 
+            "components": ["consent", "introduction1"]
+        },
+        {
         "id": "Describe",
         "order": "random",
         "components": ["ex1", "ex2", "ex3", "ex4", "ex5", "ex6", "ex7", "ex8", "ex9", "ex10", "ex11", "ex12", "ex12b", "ex13", "ex14", "ex15", "ex16", "ex16b"]
         },
         {
+            "id": "introduction2", 
+            "order": "fixed", 
+            "components": ["introduction2"]
+        },
+        {
         "id": "Choose",
         "order": "random",
-        "components": [
-            "choice1",
-            "choice2"
-        ]
+        "components": ["choice1", "choice2"]
         }, 
+        {
+            "id": "introduction3", 
+            "order": "fixed", 
+            "components": ["introduction3"]
+        },
         {
         "id": "Label placement vibes",
         "order": "random",
         "components": ["label1", "label2", "label3", "label4", "slider1_1_1", "slider1_1_2", "slider1_1_3", "slider1_2_1", "slider1_2_2", "slider1_2_3", "slider2_1_1", "slider2_1_2", "slider2_1_3", "slider2_2_1", "slider2_2_2", "slider2_2_3", "spring_1", "spring_2", "spring_3", "circle_1_1", "circle_1_2", "circle_1_3", "circle_2_1", "circle_2_2", "circle_2_3"]
         }, 
         {
+            "id": "introduction4", 
+            "order": "fixed", 
+            "components": ["introduction4"]
+        },
+        {
         "id": "Label placement rotation",
         "order": "random",
         "components": ["rotate1_1", "rotate1_2", "rotate2_1", "rotate2_2", "rotate3_1", "rotate3_2"]
+        },
+        {
+            "id": "end", 
+            "order": "fixed", 
+            "components": ["end"]
         }
     ]
   }
