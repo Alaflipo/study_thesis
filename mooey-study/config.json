@@ -27,14 +27,14 @@
             {
             "id": "difference",
             "type": "longText",
-            "prompt": "Describe the difference between the second image compared to the first image.",
+            "prompt": "Describe the difference between the right image compared to the left image.",
             "location": "sidebar",
             "placeholder": "Describe the difference...",
             "required": true
             },
             {
                 "id": "transform_1",
-                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
+                "prompt": "Imagine you are a graphic designer and need to transform the left image into the right. Describe how you would transform the left image into the right image in three or less steps using an imaginary editor",
                 "type": "longText", 
                 "location": "sidebar", 
                 "placeholder": "First step...",
@@ -68,14 +68,14 @@
             {
             "id": "difference",
             "type": "longText",
-            "prompt": "Describe the difference between the second image compared to the first image.",
+            "prompt": "Describe the difference between the right image compared to the left image.",
             "location": "sidebar",
             "placeholder": "Describe the difference...",
             "required": true
             },
             {
                 "id": "transform_1",
-                "prompt": "Desribe how you would transform the first image into the second image in three or less steps",
+                "prompt": "Imagine you are a graphic designer and need to transform the left image into the right. Describe how you would transform the left image into the right image in three or less steps using an imaginary editor",
                 "type": "longText", 
                 "location": "sidebar", 
                 "placeholder": "First step...",
@@ -262,11 +262,13 @@
 
     "ex11": {
         "baseComponent": "compare",
+        "instruction": "Look at these images of real world metro maps carefully. When answering the questions below it is important to only consider the structure and layout of the metro map and not the graphic design",
         "path": "mooey-study/assets/ex11/ex11.png"
     },
 
     "ex12": {
         "baseComponent": "compare",
+        "instruction": "Look at these images of real world metro maps carefully. When answering the questions below it is important to only consider the structure and layout of the metro map and not the graphic design",
         "path": "mooey-study/assets/ex12/ex12.png"
     },
 
@@ -349,7 +351,7 @@
     "choice2": {
         "type": "image",
         "path": "mooey-study/assets/ex9/choice.png",
-        "instruction": "After performing the action 'Straigten nodes' would you expect the machine to produce image A, B or C?",
+        "instruction": "After performing the action 'Straighten nodes', what would be the more appropriate outcome, image A, B or C?",
         "instructionLocation": "sidebar",
         "style": { "maxWidth": "900px", "width": "80%" },
         "nextButtonLocation": "sidebar",
@@ -387,28 +389,28 @@
         "baseComponent": "picture_choice_hor",
         "instruction": "Choose the picture your prefer", 
         "parameters": {
-            "imagelinks": ["labeling/outside_labeling/base1.png", "labeling/outside_labeling/with_outside1.png"] 
+            "imagelinks": ["labeling/outside_labeling/in1.png", "labeling/outside_labeling/out1.png"] 
         }
     }, 
     "label2": {
         "baseComponent": "picture_choice_hor",
         "instruction": "Choose the picture your prefer", 
         "parameters": {
-            "imagelinks": ["labeling/outside_labeling/base2.png", "labeling/outside_labeling/with_outside2.png"] 
+            "imagelinks": ["labeling/outside_labeling/out2.png", "labeling/outside_labeling/in2.png"] 
         }
     }, 
     "label3": {
         "baseComponent": "picture_choice_hor",
         "instruction": "Choose the picture your prefer", 
         "parameters": {
-            "imagelinks": ["labeling/outside_labeling/base3.png", "labeling/outside_labeling/with_outside3.png"] 
+            "imagelinks": ["labeling/outside_labeling/in3.png", "labeling/outside_labeling/out3.png"] 
         }
     }, 
     "label4": {
         "baseComponent": "picture_choice_hor",
         "instruction": "Choose the picture your prefer", 
         "parameters": {
-            "imagelinks": ["labeling/outside_labeling/base4.png", "labeling/outside_labeling/with_outside4.png"] 
+            "imagelinks": ["labeling/outside_labeling/out4.png", "labeling/outside_labeling/in4.png"] 
         }
     },
 
@@ -631,29 +633,29 @@
             "components": ["consent", "introduction1"]
         },
         {
-        "id": "Describe",
+        "id": "Label placement vibes",
         "order": "random",
-        "components": ["ex1", "ex2", "ex3", "ex4", "ex5", "ex6", "ex7", "ex8", "ex9", "ex10", "ex11", "ex12", "ex12b", "ex13", "ex14", "ex15", "ex16", "ex16b"]
-        },
+        "components": ["label1", "label2", "label3", "label4", "slider1_1_1", "slider1_1_2", "slider1_1_3", "slider1_2_1", "slider1_2_2", "slider1_2_3", "slider2_1_1", "slider2_1_2", "slider2_1_3", "slider2_2_1", "slider2_2_2", "slider2_2_3", "spring_1", "spring_2", "spring_3", "circle_1_1", "circle_1_2", "circle_1_3", "circle_2_1", "circle_2_2", "circle_2_3"]
+        }, 
         {
             "id": "introduction2", 
             "order": "fixed", 
             "components": ["introduction2"]
         },
         {
-        "id": "Choose",
+        "id": "Describe",
         "order": "random",
-        "components": ["choice1", "choice2"]
-        }, 
+        "components": ["ex2", "ex3", "ex4", "ex5", "ex6", "ex7", "ex8", "ex9", "ex10", "ex11", "ex12", "ex12b", "ex13", "ex15", "ex16", "ex16b"]
+        },
         {
             "id": "introduction3", 
             "order": "fixed", 
             "components": ["introduction3"]
         },
         {
-        "id": "Label placement vibes",
+        "id": "Choose",
         "order": "random",
-        "components": ["label1", "label2", "label3", "label4", "slider1_1_1", "slider1_1_2", "slider1_1_3", "slider1_2_1", "slider1_2_2", "slider1_2_3", "slider2_1_1", "slider2_1_2", "slider2_1_3", "slider2_2_1", "slider2_2_2", "slider2_2_3", "spring_1", "spring_2", "spring_3", "circle_1_1", "circle_1_2", "circle_1_3", "circle_2_1", "circle_2_2", "circle_2_3"]
+        "components": ["choice1", "choice2"]
         }, 
         {
             "id": "introduction4", 
