@@ -351,6 +351,24 @@
               "value": 4
             }
           ]
+        }, 
+        {
+          "id": "q-checkbox",
+          "prompt": "Check the box if you have seen an image of the metro map of this city before. If you don't recognize any you can leave all boxes unchecked.",
+          "infoText": "Select the cities from the available options.",
+          "minSelections": 0,
+          "maxSelections": 6,
+          "type": "checkbox",
+          "options": [
+            "Wien",
+            "Wuerzburg",
+            "Sydney", 
+            "Stuttgart", 
+            "Freiburg", 
+            "Milan"
+          ],
+          "withDivider": true,
+          "required": false
         }
       ]
     },
