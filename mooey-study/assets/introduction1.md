@@ -1,8 +1,8 @@
-# Introduction part 1
+# Introduction
 
-Thank your for participating in our study. The study is divided into four sets of questions. 
+Thank your for participating in our study. The study is divided into five sets of questions. 
 
-For the following part you will be asked to decide between two images based on your preference. These images will contain (parts of) metro-maps. You should answer the questions based on your first impression and decide your preference purely on the aesthetics of the image. Exact content or names within the images are not important. 
+In the following section, you will be asked a series of general questions about your familiarity with metro maps and design tools. These questions focus on your experience, knowledge, and confidence in using such tools. 
 
-**There are no wrong or right answers**. You will be presented with 25 consecutive questions, after which there is the possibility to take a short break from continuing
+**There are no wrong or right answers**. Please respond based on your own experience. 
 
