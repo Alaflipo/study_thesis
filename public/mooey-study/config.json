@@ -210,10 +210,156 @@
       "path": "mooey-study/assets/introduction1.md",
       "response": []
     },
-    "ex1": {
-        "baseComponent": "compare",
-        "path": "mooey-study/assets/ex1/ex1.png"
-    }, 
+
+    "general_q": {
+      "type": "questionnaire",
+      "response": [
+        {
+          "id": "title",
+          "type": "textOnly",
+          "prompt": "# General questions\n\n",
+          "restartEnumeration": true
+        },
+        {
+          "id": "q-slider1",
+          "prompt": "How often do you use metro maps or other types of schematic transit maps?",
+          "infoText": "Use the slider to indicate your rating on a scale from 'Never' to 'Very often'.",
+          "type": "slider",
+          "startingValue": 2,
+          "step": 1,
+          "spacing": 1, 
+          "snap": true, 
+          "withDivider": true, 
+          "options": [
+            {
+              "label": "Never",
+              "value": 0
+            },
+            {
+              "label": "Rarely",
+              "value": 1
+            },
+            {
+              "label": "Sometimes",
+              "value": 2
+            },
+            {
+              "label": "Often",
+              "value": 3
+            },
+            {
+              "label": "Very often",
+              "value": 4
+            }
+          ]
+        }, 
+        {
+          "id": "q-slider2",
+          "prompt": "How familiar are you with the design of metro maps or other schematic transit maps?",
+          "infoText": "Use the slider to indicate your rating on a scale from 'Not familiar' to 'Very familiar'.",
+          "type": "slider",
+          "startingValue": 2,
+          "step": 1,
+          "spacing": 1, 
+          "snap": true, 
+          "withDivider": true, 
+          "options": [
+            {
+              "label": "Not familiar",
+              "value": 0
+            },
+            {
+              "label": "Slightly familiar",
+              "value": 1
+            },
+            {
+              "label": "Somewhat familiar",
+              "value": 2
+            },
+            {
+              "label": "Quite familiar",
+              "value": 3
+            },
+            {
+              "label": "Very familiar",
+              "value": 4
+            }
+          ]
+        }, 
+        {
+          "id": "q-slider3",
+          "prompt": "How familiar are you with graphic design software? (e.g. Photoshop, Illustrator, Figma, Canva, Blender, Powerpoint (for graphics)",
+          "infoText": "Use the slider to indicate your rating on a scale from 'Not familiar' to 'Very familiar'.",
+          "type": "slider",
+          "startingValue": 2,
+          "step": 1,
+          "spacing": 1, 
+          "snap": true, 
+          "withDivider": true, 
+          "options": [
+            {
+              "label": "Not familiar",
+              "value": 0
+            },
+            {
+              "label": "Slightly familiar",
+              "value": 1
+            },
+            {
+              "label": "Somewhat familiar",
+              "value": 2
+            },
+            {
+              "label": "Quite familiar",
+              "value": 3
+            },
+            {
+              "label": "Very familiar",
+              "value": 4
+            }
+          ]
+        }, 
+        {
+          "id": "q-slider4",
+          "prompt": "How comfortable are you navigating graphic design software interfaces?",
+          "infoText": "Use the slider to indicate your rating on a scale from 'Not familiar' to 'Very familiar'.",
+          "type": "slider",
+          "startingValue": 2,
+          "step": 1,
+          "spacing": 1, 
+          "snap": true, 
+          "withDivider": true, 
+          "options": [
+            {
+              "label": "Not comfortable",
+              "value": 0
+            },
+            {
+              "label": "Slightly comfortable",
+              "value": 1
+            },
+            {
+              "label": "Somewhat comfortable",
+              "value": 2
+            },
+            {
+              "label": "Quite comfortable",
+              "value": 3
+            },
+            {
+              "label": "Very comfortable",
+              "value": 4
+            }
+          ]
+        }
+      ]
+    },
+
+    "introduction1_1": {
+      "type": "markdown",
+      "path": "mooey-study/assets/introduction1_1.md",
+      "response": []
+    },
 
     "ex2": {
         "baseComponent": "compare",
@@ -285,13 +431,6 @@
         "path": "mooey-study/assets/besides.html",
         "parameters": {
             "imagelinks": ["ex13/left.png", "ex13/right.png"] 
-        }
-    },
-    "ex14": {
-        "baseComponent": "compare_2",
-        "path": "mooey-study/assets/besides.html",
-        "parameters": {
-            "imagelinks": ["ex14/left.png", "ex14/right.png"] 
         }
     },
     "ex15": {
@@ -630,7 +769,7 @@
         {
             "id": "introduction", 
             "order": "fixed", 
-            "components": ["consent", "introduction1"]
+            "components": ["consent", "introduction1", "general_q", "introduction1_1"]
         },
         {
         "id": "Label placement vibes",
